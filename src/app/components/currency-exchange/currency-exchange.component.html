@@ -1,0 +1,80 @@
+<!-- Logo -->
+<div class="grid">
+  <img
+    src="../../../assets/img/Action Labs.png"
+    alt="Logo"
+    width="159"
+    height="44"
+  />
+  <hr />
+  <p class="title">BRL EXCHANGE RATE</p>
+</div>
+
+<!-- Form -->
+<div class="grid">
+  <mat-form-field>
+    <mat-label>Enter the currency code</mat-label>
+    <input
+      matInput
+      id="currencyCode"
+      [(ngModel)]="currencyCode"
+      maxlength="3"
+    />
+  </mat-form-field>
+  <div class="invalid-code" *ngIf="hasValidCurrency()">
+    <p>Invalid currency code. Accepted codes:</p>
+    <p>USD, EUR, GBP, JPY, CAD.</p>
+  </div>
+  <button mat-button (click)="getExchangeRate()" [disabled]="hasValidCurrency() || disableCurrency()"  [style.opacity]="!disableCurrency() && !hasValidCurrency() ? '1' : '0.5'">EXCHANGE RESULT</button>
+</div>
+
+<hr class="currency-hr grid" *ngIf="showResult && currencyCode" />
+<div
+  *ngIf="showResult && currencyCode"
+  class="grid exchange-result"
+  style="display: flex"
+>
+  <div class="left-group">
+    <p><b>Exchange rate now</b></p>
+    <p>{{ lastUpdatedAt | date : "dd/MM/yyyy - HH:mm" }}</p>
+  </div>
+  <div class="right-group">
+    <p class="currency">{{ currencyCode }}/BRL</p>
+  </div>
+</div>
+
+<div *ngIf="showResult" class="grid result-grid">
+  <p class="result">{{ exchangeRate | currency : "BRL" }}</p>
+</div>
+
+<div class="grid" *ngIf="calledDaily">
+  <p class="last30days" (click)="toggleLast30Days()">
+    <b class="float-left">LAST 30 DAYS</b>
+    <span class="expand-icon">
+      {{ isExpanded ? "&#45;" : "&#43;" }}
+    </span>
+  </p>
+  <div *ngIf="isExpanded" class="cards">
+    <div *ngFor="let data of last30DaysData" class="card">
+      <div>
+        <p class="top">{{ data.date | date : "dd/MM/yyyy" }}</p>
+      </div>
+      <div class="item">
+        <p>OPEN: {{ data.open }}</p>
+        <p>CLOSE: {{ data.close }}</p>
+      </div>
+      <div class="item">
+        <p>HIGH: {{ data.high }}</p>
+        <p>LOW: {{ data.low }}</p>
+      </div>
+      <div class="down">
+        <p>
+          CLOSE DIFF(%):
+          <span [ngClass]="getDiffClass(data)">{{
+            calculateCloseDiff(data)
+          }}</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

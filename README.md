@@ -25,3 +25,12 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Uso
+Na primeira grade, insira o código da moeda desejada no campo de entrada.
+Clique no botão "EXCHANGE RESULT" para obter a taxa de câmbio.
+A resposta será exibida nas grades seguintes, incluindo a taxa de câmbio atual e dados históricos dos últimos 30 dias.
+
+## Observações
+Certifique-se de inserir um código de moeda válido (USD, EUR, GBP, JPY, CAD).
+O botão "EXCHANGE RESULT" ficará desativado se o código da moeda for inválido ou não tiver sido inserido.

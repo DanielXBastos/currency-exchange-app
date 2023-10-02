@@ -1,0 +1,173 @@
+$light-blue: #07b0fb;
+$neutral-grey: #E5E5E5;
+$green: #69C669;
+
+body {
+  font-family: "Roboto";
+}
+
+hr {
+  background-color: $neutral-grey;
+}
+
+.title {
+  width: 330px;
+  font-size: 24px;
+  color: $light-blue;
+  font-weight: 700;
+}
+
+.logo {
+  width: 159px;
+  height: 44px;
+}
+
+label {
+  display: block;
+  margin-top: 16px;
+}
+
+input {
+  width: 330px;
+  height: 56px;
+}
+
+button {
+  width: 330px;
+  height: 48px;
+  font-size: 16px;
+}
+
+.left-group {
+  width: 180px;
+  height: 45px;
+  text-align: left;
+}
+
+.right-group {
+  text-align: right;
+  color: $light-blue;
+  font-size: 24px;
+  margin-left: auto;
+  p {
+    text-align: right;
+  }
+}
+
+.result-grid {
+  width: 330px;
+  height: 72px;
+  background-color: rgba(7 176 251 / 10%);
+  display: flex;
+}
+
+.result {
+  font-size: 32px;
+  color: $light-blue;
+  margin: auto;
+  font-weight: bold;
+}
+
+.last30days {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: right;
+  cursor: pointer;
+  border-bottom: 2px solid $light-blue;
+  padding-bottom: 11px;
+}
+
+.expand {
+  transform: rotate(45deg);
+}
+
+.cards {
+  width: 330px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background: $neutral-grey;
+  font-size: 14px;
+}
+
+.card {
+  width: 310px;
+  height: 141px;
+  background-color: #fff;
+  flex-direction: column;
+  display: flex;
+  border: 10px solid #FFF;
+  margin: 10px 10px 0px;
+  &:last-child {
+    margin-bottom: 10px;
+  }
+  .item {
+    flex: 1;
+    text-align: justify;
+
+    p {
+      margin: 4px 0; /* Adiciona espaço entre os elementos p */
+    }
+  }
+  .top {
+    color: $light-blue;
+  }
+  .top,
+  .item,
+  .down {
+    flex: 1; /* Faz com que os itens ocupem a mesma altura */
+
+    p {
+      margin: 4px 0; /* Adiciona espaço entre os elementos p */
+    }
+  }
+
+  .item {
+    display: flex;
+    justify-content: space-between; /* Adiciona espaço entre os elementos dentro de .item */
+
+    p {
+      vertical-align: top; /* Ajusta a linha de base verticalmente */
+    }
+  }
+
+  .top,
+  .down {
+    text-align: left; /* Alinha o texto à esquerda em .top e .down */
+  }
+}
+
+mat-form-field {
+  width: inherit;
+}
+
+.exchange-resul {
+  margin: 10px auto;
+}
+
+.expand-icon {
+  font-size: 24px;
+  color: $light-blue;
+}
+
+.currency-hr {
+  margin: 25px auto 10px;
+}
+
+.color-blue {
+  color: $light-blue;
+}
+
+.positive {
+  color: $green;
+}
+
+.negative {
+  color: red;
+}
+
+.invalid-code{
+  color: red;
+  font-size: 12px;
+  text-align: left;
+}

@@ -1,1 +1,72 @@
-/* You can add global styles to this file, and also import other style files */
+@import "@angular/material/theming";
+
+$neutral-grey: #f4f4f4;
+$light-blue: #07b0fb;
+
+html, body {
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  text-align: center;
+  background: $light-blue;
+  padding: 1px 0px;
+  width: 330px;
+  font-size: 12px;
+  color: #fff;
+  margin-top: auto;
+  align-self: center;
+}
+
+.grid {
+  width: 330px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.float-left {
+  float: left;
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: $neutral-grey !important;
+}
+
+.mat-mdc-form-field-flex  {
+  margin-left: 10px!important;
+}
+
+mat-form-field {
+  background-color: none;
+  transition: background-color 0.3s; /* Adiciona uma transição suave para a cor de fundo */
+
+  mat-label {
+    color: black;
+  }
+
+  .mat-mdc-form-field-focus-overlay {
+    width: 130%; // Corrige erro de overlay não ocupando o componente todo.
+    color: $light-blue!important;
+  }
+
+  .mdc-line-ripple {
+    display: none; // remove linha indesejada
+  }
+}
+
+button[mat-button] {
+  color: white !important; /* Define a cor do texto para branco */
+  background-color: $light-blue !important; /* Define a cor de fundo para vermelho */
+  border-radius: 20px !important; /* Define a borda arredondada */
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:focus {
+    opacity: 0.8;
+  }
+}
